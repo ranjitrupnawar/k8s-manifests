@@ -45,3 +45,4 @@ kubectl create deployment art-mongo --image mongo
 kubectl logs nginx-748c667d99-hmv47
 kubectl delete pod <name of pod>
 kubectl delete deployment <name of deployment>
+
