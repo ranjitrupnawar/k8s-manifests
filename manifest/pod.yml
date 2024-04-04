@@ -1,0 +1,16 @@
+apiversion: v1 
+kind: Pod 
+metadata:
+   name: jr
+   labels:
+     role: jr-role
+spec:
+-container:
+    images: nginx
+    name: jr-nginx
+    port:
+       -name: jr-port
+       conatinerport: 80
+       protocol: TCP
+
+
