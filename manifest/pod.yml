@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - image: nginx
-    name: jr-nginx
+    name: ranjitrupnawar/backend
     ports:
     - name: jr-port
       containerPort: 80
