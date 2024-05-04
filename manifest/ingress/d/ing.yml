@@ -6,18 +6,18 @@ metadata:
     name: myingress
 spec:
   rules:
-  - host: <Host>
+  - host: af044c813730f4bc1a575168b704fc67-460450711.ap-southeast-1.elb.amazonaws.com
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/backend"
         backend:
           service:
             name: name: myapp
             port: 
               number: 8080
       - pathType: Prefix
-        path: "/"
+        path: "/nginx"
         backend:
           service:
             name: mypod
