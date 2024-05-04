@@ -13,15 +13,13 @@ spec:
         path: "/backend"
         backend:
           service:
-            name: name: myapp
-            port: 
+            name: myapp
+            port:
               number: 8080
       - pathType: Prefix
         path: "/nginx"
         backend:
           service:
             name: mypod
-            port: 
-              number: 
-
-
+            port:
+              number: 80
