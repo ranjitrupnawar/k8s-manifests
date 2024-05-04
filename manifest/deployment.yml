@@ -38,38 +38,25 @@ metadata:
 spec:
   selector:
     matchLabels:
-      mypod
+      app: mypod
   template:
     metadata:
       labels:
-        mypod
+        app: mypod
     spec:
       containers:
-      - mypod
-        image: containers:
-      - name: myapp
+      - name: mypod
         image: nginx
         ports:
         - containerPort: 80
-      
----
 
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: mypod
 spec:
   selector:
-    name: mypod
+    app: mypod
   ports:
   - port: 80
-
-
-    
-
-
-        
-
-  
-
-  
