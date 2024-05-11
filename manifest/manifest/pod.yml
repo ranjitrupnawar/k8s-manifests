@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jr
+  labels:
+    role: jr-role
+spec:
+  containers:
+  - image: nginx
+    name: ranjitrupnawar/backend
+    ports:
+    - name: jr-port
+      containerPort: 80
+      protocol: TCP
