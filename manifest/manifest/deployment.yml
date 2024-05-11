@@ -1,3 +1,4 @@
+<<<<<<< HEAD:manifest/manifest/deployment.yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,3 +34,67 @@ spec:
   - port: 8080
     targetPort: 8080
     nodePort: 30000
+=======
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: ranjitrupnawar/my-tomcat
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 8080
+    targetPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mypod
+spec:
+  selector:
+    matchLabels:
+      app: mypod
+  template:
+    metadata:
+      labels:
+        app: mypod
+    spec:
+      containers:
+      - name: mypod
+        image: nginx
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mypod
+spec:
+  selector:
+    app: mypod
+  ports:
+  - port: 80
+>>>>>>> f0b34d32085cece5bf15725127c6e34c4245a413:manifest/deployment.yml
