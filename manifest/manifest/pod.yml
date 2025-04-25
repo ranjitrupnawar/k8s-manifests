@@ -6,8 +6,8 @@ metadata:
     role: jr-role
 spec:
   containers:
-  - image: nginx
-    name: ranjitrupnawar/backend
+  - name: backend
+    image: ranjitrupnawar/backend
     ports:
     - name: jr-port
       containerPort: 80
